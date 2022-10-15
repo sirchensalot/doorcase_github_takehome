@@ -1,9 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+import getUserInfo from '../api/getUserInfo';
 
 function App() {
+  useEffect(()=>{
+    getUserInfo('sirchensalot').then(data => {
+      console.log({data})
+    })
 
-  console.log(process.env)
+  },[])
 
   return (
     <div className="App">
